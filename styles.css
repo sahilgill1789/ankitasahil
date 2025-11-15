@@ -1,0 +1,896 @@
+/* ===================================
+   Wedding Invitation Styles
+   Theme: Indian Spring Wedding
+   Colors: Off-white, soft florals, elegant gold accents
+   =================================== */
+
+/* CSS Variables for Theme Colors - Softer Palette with Florals */
+:root {
+    --cream: #F5F1E8;
+    --beige: #EDE7D9;
+    --textured-bg: #F8F4EB;
+    --soft-maroon: #9D6B6B;
+    --wine: #8B7070;
+    --burgundy: #A57C7C;
+    --gold: #C9A961;
+    --bronze: #B8941E;
+    --dark-gold: #9B7E1A;
+    --rose-gold: #B8907F;
+    --text-dark: #3D3128;
+    --text-medium: #5A4A3A;
+    --text-light: #7A6A5A;
+    --floral-accent: #9D8B7C;
+    --linen-texture: #FAF7F0;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cream);
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: var(--linen-texture);
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(157, 107, 107, 0.02) 2px, rgba(157, 107, 107, 0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(157, 107, 107, 0.02) 2px, rgba(157, 107, 107, 0.02) 4px);
+    text-align: center;
+    padding: 60px 20px;
+    overflow: hidden;
+    border-top: 6px solid var(--soft-maroon);
+    border-bottom: 6px solid var(--soft-maroon);
+}
+
+/* Floral Border Pattern */
+.floral-border {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: 
+        radial-gradient(circle at 5% 50%, var(--gold) 3px, transparent 3px),
+        radial-gradient(circle at 15% 50%, var(--burgundy) 2px, transparent 2px),
+        radial-gradient(circle at 25% 50%, var(--gold) 3px, transparent 3px),
+        radial-gradient(circle at 35% 50%, var(--burgundy) 2px, transparent 2px),
+        radial-gradient(circle at 45% 50%, var(--gold) 3px, transparent 3px),
+        radial-gradient(circle at 55% 50%, var(--burgundy) 2px, transparent 2px),
+        radial-gradient(circle at 65% 50%, var(--gold) 3px, transparent 3px),
+        radial-gradient(circle at 75% 50%, var(--burgundy) 2px, transparent 2px),
+        radial-gradient(circle at 85% 50%, var(--gold) 3px, transparent 3px),
+        radial-gradient(circle at 95% 50%, var(--burgundy) 2px, transparent 2px);
+    background-size: 10% 100%;
+    opacity: 0.4;
+}
+
+.floral-border.top-border {
+    top: 0;
+}
+
+.floral-border.bottom-border {
+    bottom: 80px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Floral corner decorations */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 80px;
+    left: 5%;
+    background: 
+        radial-gradient(circle at 30% 30%, var(--gold) 4px, transparent 4px),
+        radial-gradient(circle at 50% 20%, var(--burgundy) 3px, transparent 3px),
+        radial-gradient(circle at 70% 30%, var(--gold) 4px, transparent 4px),
+        radial-gradient(circle at 30% 50%, var(--burgundy) 3px, transparent 3px),
+        radial-gradient(circle at 70% 50%, var(--burgundy) 3px, transparent 3px),
+        radial-gradient(circle at 30% 70%, var(--gold) 4px, transparent 4px),
+        radial-gradient(circle at 50% 80%, var(--burgundy) 3px, transparent 3px),
+        radial-gradient(circle at 70% 70%, var(--gold) 4px, transparent 4px);
+    background-size: 100% 100%;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: 120px;
+    right: 5%;
+    background: 
+        radial-gradient(circle at 30% 30%, var(--gold) 4px, transparent 4px),
+        radial-gradient(circle at 50% 20%, var(--burgundy) 3px, transparent 3px),
+        radial-gradient(circle at 70% 30%, var(--gold) 4px, transparent 4px),
+        radial-gradient(circle at 30% 50%, var(--burgundy) 3px, transparent 3px),
+        radial-gradient(circle at 70% 50%, var(--burgundy) 3px, transparent 3px),
+        radial-gradient(circle at 30% 70%, var(--gold) 4px, transparent 4px),
+        radial-gradient(circle at 50% 80%, var(--burgundy) 3px, transparent 3px),
+        radial-gradient(circle at 70% 70%, var(--gold) 4px, transparent 4px);
+    background-size: 100% 100%;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Complex Mandala Pattern */
+.mandala-accent {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 40px;
+    position: relative;
+    opacity: 0.6;
+}
+
+.mandala-accent::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background: 
+        radial-gradient(circle at center, transparent 30%, var(--gold) 30%, var(--gold) 32%, transparent 32%),
+        radial-gradient(circle at center, transparent 45%, var(--burgundy) 45%, var(--burgundy) 46%, transparent 46%),
+        radial-gradient(circle at center, transparent 60%, var(--gold) 60%, var(--gold) 61%, transparent 61%),
+        conic-gradient(from 0deg, var(--gold) 0deg 10deg, transparent 10deg 40deg, var(--burgundy) 40deg 50deg, transparent 50deg 80deg, var(--gold) 80deg 90deg, transparent 90deg 120deg, var(--burgundy) 120deg 130deg, transparent 130deg 160deg, var(--gold) 160deg 170deg, transparent 170deg 200deg, var(--burgundy) 200deg 210deg, transparent 210deg 240deg, var(--gold) 240deg 250deg, transparent 250deg 280deg, var(--burgundy) 280deg 290deg, transparent 290deg 320deg, var(--gold) 320deg 330deg, transparent 330deg 360deg);
+    animation: rotate 60s linear infinite;
+    opacity: 0.3;
+}
+
+.mandala-accent::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 20%;
+    left: 20%;
+    border: 3px double var(--gold);
+    border-radius: 50%;
+    background: 
+        repeating-conic-gradient(from 0deg, var(--burgundy) 0deg 2deg, transparent 2deg 10deg),
+        radial-gradient(circle at center, var(--gold) 15%, transparent 15%);
+    opacity: 0.4;
+    animation: rotate-reverse 40s linear infinite;
+}
+
+.pre-title {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.couple-names {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 20px 0;
+    line-height: 1.2;
+    color: var(--gold);
+    text-shadow: 2px 2px 4px rgba(157, 107, 107, 0.15);
+}
+
+.bride-name,
+.groom-name {
+    display: inline-block;
+    animation: fadeInScale 1.2s ease-out;
+}
+
+.ampersand {
+    display: inline-block;
+    font-size: 4rem;
+    color: var(--soft-maroon);
+    margin: 0 20px;
+    font-style: italic;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.date-container {
+    margin: 30px 0;
+}
+
+.wedding-dates {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.location {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+/* Countdown Timer */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    border: 2px solid var(--burgundy);
+    min-width: 100px;
+    box-shadow: 0 4px 15px rgba(157, 107, 107, 0.1);
+}
+
+.countdown-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--soft-maroon);
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--gold);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+/* ===================================
+   Story Section
+   =================================== */
+.story-section {
+    padding: 100px 20px;
+    background-color: var(--beige);
+    background-image: 
+        radial-gradient(circle at 10% 30%, rgba(201, 169, 97, 0.08) 0%, transparent 30%),
+        radial-gradient(circle at 90% 70%, rgba(157, 107, 107, 0.06) 0%, transparent 30%),
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(157, 107, 107, 0.02) 3px, rgba(157, 107, 107, 0.02) 6px),
+        repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(157, 107, 107, 0.02) 3px, rgba(157, 107, 107, 0.02) 6px);
+    text-align: center;
+    position: relative;
+}
+
+.story-section::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50px;
+    right: 5%;
+    background: 
+        radial-gradient(circle at center, transparent 20%, var(--gold) 20%, var(--gold) 22%, transparent 22%),
+        radial-gradient(circle at center, transparent 35%, var(--burgundy) 35%, var(--burgundy) 36%, transparent 36%),
+        conic-gradient(from 0deg, transparent 0deg 20deg, var(--gold) 20deg 25deg, transparent 25deg 45deg);
+    border-radius: 50%;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(157, 107, 107, 0.1);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--burgundy), var(--gold), var(--burgundy), transparent);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* ===================================
+   Events Timeline
+   =================================== */
+.events-section {
+    padding: 100px 20px;
+    background: var(--cream);
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(201, 169, 97, 0.06) 0%, transparent 25%),
+        radial-gradient(circle at 85% 50%, rgba(157, 107, 107, 0.05) 0%, transparent 25%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(201, 169, 97, 0.02) 2px, rgba(201, 169, 97, 0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(201, 169, 97, 0.02) 2px, rgba(201, 169, 97, 0.02) 4px);
+    position: relative;
+}
+
+.events-section::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    bottom: 80px;
+    left: 8%;
+    background: 
+        radial-gradient(circle at center, var(--gold) 15%, transparent 15%),
+        radial-gradient(circle at center, transparent 30%, var(--burgundy) 30%, var(--burgundy) 32%, transparent 32%),
+        repeating-conic-gradient(from 0deg, var(--gold) 0deg 5deg, transparent 5deg 15deg);
+    border-radius: 50%;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.events-section.rohtak-events {
+    border-top: 4px solid var(--burgundy);
+}
+
+.events-section.delhi-events {
+    border-bottom: 4px solid var(--burgundy);
+    background: var(--beige);
+}
+
+.location-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.location-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--soft-maroon);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.location-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-medium);
+    font-style: italic;
+}
+
+.events-timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* Parallel Events Container for side-by-side display */
+.parallel-events-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .parallel-events-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 4/3;
+    }
+}
+
+.event-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 50px;
+    box-shadow: 0 10px 30px rgba(157, 107, 107, 0.12);
+    border: 2px solid var(--burgundy);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(201, 169, 97, 0.03) 1px, transparent 1px),
+        radial-gradient(circle at 90% 80%, rgba(157, 107, 107, 0.03) 1px, transparent 1px),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(201, 169, 97, 0.01) 2px, rgba(201, 169, 97, 0.01) 4px);
+    background-size: 100px 100px, 150px 150px, 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(157, 107, 107, 0.2);
+    border-color: var(--gold);
+}
+
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--gold), var(--bronze), var(--burgundy));
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.event-card:hover::before {
+    opacity: 0.2;
+}
+
+.event-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.event-content {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.event-title {
+    font-size: 2.5rem;
+    color: var(--soft-maroon);
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 10;
+}
+
+.event-date {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.event-time {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.event-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.event-venue {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* ===================================
+   Photo Gallery
+   =================================== */
+.gallery-section {
+    padding: 100px 20px;
+    background: var(--textured-bg);
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(157, 107, 107, 0.02) 2px, rgba(157, 107, 107, 0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(157, 107, 107, 0.02) 2px, rgba(157, 107, 107, 0.02) 4px);
+    text-align: center;
+    border-top: 4px solid var(--gold);
+    border-bottom: 4px solid var(--gold);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 3px solid var(--burgundy);
+    box-shadow: 0 10px 30px rgba(157, 107, 107, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    aspect-ratio: 3/4;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(157, 107, 107, 0.25);
+    border-color: var(--gold);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.3), rgba(157, 107, 107, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* ===================================
+   RSVP Section
+   =================================== */
+.rsvp-section {
+    padding: 100px 20px;
+    background: var(--cream);
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(157, 107, 107, 0.02) 3px, rgba(157, 107, 107, 0.02) 6px),
+        repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(157, 107, 107, 0.02) 3px, rgba(157, 107, 107, 0.02) 6px);
+    text-align: center;
+}
+
+.rsvp-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.rsvp-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.rsvp-deadline {
+    font-size: 1.3rem;
+    color: var(--soft-maroon);
+    font-weight: 600;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    border: 2px solid var(--gold);
+}
+
+.form-container {
+    margin-top: 40px;
+}
+
+.form-placeholder {
+    padding: 60px 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 3px dashed var(--gold);
+    border-radius: 8px;
+    color: var(--text-medium);
+}
+
+.form-placeholder p {
+    margin: 10px 0;
+}
+
+.placeholder-instruction {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+#google-form {
+    border-radius: 10px;
+    border: 2px solid var(--burgundy);
+    box-shadow: 0 10px 30px rgba(157, 107, 107, 0.12);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+.footer {
+    padding: 80px 20px 40px;
+    background: var(--beige);
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(157, 107, 107, 0.02) 2px, rgba(157, 107, 107, 0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(157, 107, 107, 0.02) 2px, rgba(157, 107, 107, 0.02) 4px);
+    text-align: center;
+    position: relative;
+    border-bottom: 6px solid var(--soft-maroon);
+}
+
+.footer .floral-border {
+    top: 0;
+    bottom: auto;
+}
+
+.footer-text {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.footer-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(157, 107, 107, 0.15);
+}
+
+.footer-date {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.footer-location {
+    font-size: 1.3rem;
+    color: var(--soft-maroon);
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+/* Fade-in on scroll - visible by default for accessibility */
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation only when visible class is added by JavaScript */
+.fade-in.animate-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 768px) {
+    .couple-names {
+        font-size: 3.5rem;
+    }
+    
+    .ampersand {
+        font-size: 3rem;
+        margin: 0 10px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .event-card {
+        padding: 30px;
+    }
+    
+    .event-title {
+        font-size: 2rem;
+    }
+    
+    .countdown {
+        gap: 20px;
+    }
+    
+    .countdown-item {
+        min-width: 80px;
+        padding: 15px;
+    }
+    
+    .countdown-number {
+        font-size: 2rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .mandala-accent {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .couple-names {
+        font-size: 2.5rem;
+    }
+    
+    .ampersand {
+        font-size: 2rem;
+    }
+    
+    .wedding-dates {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .event-card {
+        padding: 20px;
+    }
+    
+    .event-icon {
+        font-size: 3rem;
+    }
+    
+    .event-title {
+        font-size: 1.6rem;
+    }
+    
+    .event-description {
+        font-size: 1rem;
+    }
+    
+    .intro-text,
+    .rsvp-text {
+        font-size: 1rem;
+    }
+    
+    .location-title {
+        font-size: 2.2rem;
+    }
+    
+    .location-subtitle {
+        font-size: 1rem;
+    }
+}
